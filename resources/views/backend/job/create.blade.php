@@ -32,13 +32,16 @@
             <p class="text-sm text-red-500 font-semibold">{{$message}}</p>
             @enderror
             <div class="mt-2">
-              <input type="text" name="title" id="title" autocomplete="given-name"
+              <input type="text" value="{{old('title')}}" name="title" id="title" autocomplete="given-name"
                 class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
             </div>
           </div>
 
           <div class="sm:col-span-3">
             <label for="salary" class="block text-sm font-medium leading-6 text-gray-900">Salary</label>
+            @error('salary')
+            <p class="text-sm text-red-500 font-semibold">{{$message}}</p>
+            @enderror
             <div class="mt-2">
               <input type="text" name="salary" id="salary" autocomplete="family-name"
                 class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
@@ -52,7 +55,7 @@
             @enderror
             <div class="mt-2">
               <textarea id="description" name="description" rows="3"
-                class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 @error('about') ring-red-600 @enderror sm:text-sm sm:leading-6">{{old('name')}}</textarea>
+                class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 @error('about') ring-red-600 @enderror sm:text-sm sm:leading-6">{{old('description')}}</textarea>
             </div>
             <p class="mt-3 text-sm leading-6 text-gray-600">Write a few sentences about the job.</p>
           </div>
@@ -72,8 +75,8 @@
           <div class="">
             <label for="deadline" class="block text-sm font-medium leading-6 text-gray-900">Deadline</label>
             <div class="mt-2">
-              <input type="date" name="deadline" id="deadline" autocomplete="deadline"
-                class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 ring-red-600 @enderrorsm:text-sm sm:leading-6">
+              <input type="date" value="{{old('deadline')}}" name="deadline" id="deadline" autocomplete="deadline"
+                class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 @ sm:text-sm sm:leading-6">
             </div>
           </div>
         </div>
